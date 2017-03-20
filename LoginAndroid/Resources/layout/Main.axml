@@ -10,7 +10,7 @@
     <ImageView
         android:src="@android:drawable/sym_def_app_icon"
         android:layout_width="match_parent"
-        android:layout_height="50pt"
+        android:layout_height="30pt"
         android:id="@+id/imageView1" />
     <TextView
         android:text="Login"
@@ -20,13 +20,13 @@
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
-        android:layout_height="50pt"
+        android:layout_height="30pt"
         android:id="@+id/textView1"
         android:capitalize="characters"
         android:textAllCaps="true" />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="30pt"
+        android:layout_height="20pt"
         android:layout_margin="10pt"
         android:gravity="center_vertical"
         android:paddingLeft="5pt"
@@ -36,7 +36,7 @@
         android:id="@+id/textView2" />
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="30pt"
+        android:layout_height="20pt"
         android:layout_margin="10pt"
         android:gravity="center_vertical"
         android:paddingLeft="5pt"
@@ -46,7 +46,7 @@
         android:id="@+id/textView3" />
     <Button
         android:text="Registrar"
-        android:layout_height="30pt"
+        android:layout_height="25pt"
         android:layout_width="match_parent"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
@@ -57,7 +57,7 @@
         android:id="@+id/button2" />
     <Button
         android:text="Entrar"
-        android:layout_height="30pt"
+        android:layout_height="25pt"
         android:layout_width="match_parent"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
