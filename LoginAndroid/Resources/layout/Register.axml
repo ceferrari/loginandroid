@@ -21,61 +21,49 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="30pt"
-            android:id="@+id/textView1"
+            android:id="@+id/tvRegister"
             android:capitalize="characters"
             android:textAllCaps="true" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="25pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginBottom="5pt"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:paddingLeft="5pt"
             android:hint="Nome"
             android:textSize="12pt"
             android:background="#FFF"
-            android:id="@+id/editText1" />
+            android:id="@+id/etNome" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="25pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="10pt"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:paddingLeft="5pt"
             android:hint="E-mail"
             android:textSize="12pt"
             android:background="#FFF"
-            android:id="@+id/editText2" />
+            android:id="@+id/etEmail" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="25pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="10pt"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:paddingLeft="5pt"
             android:hint="Senha"
             android:textSize="12pt"
             android:background="#FFF"
-            android:id="@+id/editText3" />
+            android:id="@+id/etSenha" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="25pt"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="10pt"
+            android:layout_margin="10pt"
             android:gravity="center_vertical"
             android:paddingLeft="5pt"
             android:hint="Confirmar Senha"
             android:textSize="12pt"
             android:background="#FFF"
-            android:id="@+id/editText4" />
+            android:id="@+id/etConfirmarSenha" />
         <Button
             android:text="Salvar"
             android:layout_height="25pt"
@@ -86,17 +74,6 @@
             android:layout_marginBottom="5pt"
             android:textSize="12pt"
             android:background="#66CDAA"
-            android:id="@+id/button1" />
-        <Button
-            android:text="Voltar"
-            android:layout_height="25pt"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="10pt"
-            android:textSize="12pt"
-            android:background="@android:color/holo_blue_light"
-            android:id="@+id/btnBackToLogin" />
+            android:id="@+id/btnSalvar" />
     </LinearLayout>
 </ScrollView>

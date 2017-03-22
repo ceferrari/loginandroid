@@ -6,14 +6,13 @@ using System;
 
 namespace LoginAndroid
 {
-    [Activity(Label = "LoginAndroid", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Main", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
             var button2 = FindViewById<Button>(Resource.Id.button2);
@@ -35,7 +34,7 @@ namespace LoginAndroid
 
             //Dialog dialog = alert.Create();
             //dialog.Show();
-            SetContentView(Resource.Layout.Register);
+            StartActivity(typeof(RegisterActivity));
         }
     }
 }
