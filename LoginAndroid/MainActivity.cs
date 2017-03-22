@@ -16,25 +16,26 @@ namespace LoginAndroid
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
-            var button1 = FindViewById<Button>(Resource.Id.button1);
-            button1.Click += button1_Click;
+            var button2 = FindViewById<Button>(Resource.Id.button2);
+            button2.Click += button2_Click;
         }
 
-        private void button1_Click(object sender, EventArgs ea)
+        private void button2_Click(object sender, EventArgs ea)
         {
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.SetTitle("Confirm delete");
-            alert.SetMessage("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
-            alert.SetPositiveButton("Delete", (senderAlert, args) => {
-                Toast.MakeText(this, "Deleted!", ToastLength.Short).Show();
-            });
+            //AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            //alert.SetTitle("Confirm delete");
+            //alert.SetMessage("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
+            //alert.SetPositiveButton("Delete", (senderAlert, args) => {
+            //    Toast.MakeText(this, "Deleted!", ToastLength.Short).Show();
+            //});
 
-            alert.SetNegativeButton("Cancel", (senderAlert, args) => {
-                Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
-            });
+            //alert.SetNegativeButton("Cancel", (senderAlert, args) => {
+            //    Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
+            //});
 
-            Dialog dialog = alert.Create();
-            dialog.Show();
+            //Dialog dialog = alert.Create();
+            //dialog.Show();
+            SetContentView(Resource.Layout.Register);
         }
     }
 }

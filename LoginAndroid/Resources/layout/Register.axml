@@ -1,89 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#E0E0E0"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25pt"
-    android:minHeight="25pt">
-    <ImageView
-        android:src="@android:drawable/sym_def_app_icon"
-        android:layout_width="match_parent"
-        android:layout_height="30pt"
-        android:id="@+id/imageView1" />
-    <TextView
-        android:text="Login"
-        android:textSize="24pt"
-        android:textStyle="bold"
-        android:textColor="@android:color/holo_blue_light"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#E0E0E0"
         android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
-        android:layout_height="30pt"
-        android:id="@+id/textView1"
-        android:capitalize="characters"
-        android:textAllCaps="true" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_margin="10pt"
-        android:gravity="center_vertical"
-        android:paddingLeft="5pt"
-        android:hint="Nome Completo"
-        android:textSize="12pt"
-        android:background="#FFF"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_margin="10pt"
-        android:gravity="center_vertical"
-        android:paddingLeft="5pt"
-        android:hint="E-mail"
-        android:textSize="12pt"
-        android:background="#FFF"
-        android:id="@+id/editText2" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_margin="10pt"
-        android:gravity="center_vertical"
-        android:paddingLeft="5pt"
-        android:hint="Senha"
-        android:textSize="12pt"
-        android:background="#FFF"
-        android:id="@+id/editText1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="20pt"
-        android:layout_margin="10pt"
-        android:gravity="center_vertical"
-        android:paddingLeft="5pt"
-        android:hint="Confirmar Senha"
-        android:textSize="12pt"
-        android:background="#FFF"
-        android:id="@+id/editText1" />
-    <Button
-        android:text="Registrar"
-        android:layout_height="25pt"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="10pt"
-        android:layout_marginRight="10pt"
-        android:layout_marginTop="10pt"
-        android:layout_marginBottom="5pt"
-        android:textSize="12pt"
-        android:background="#66CDAA"
-        android:id="@+id/button1" />
-    <Button
-        android:text="Voltar"
-        android:layout_height="25pt"
-        android:layout_width="match_parent"
-        android:layout_marginLeft="10pt"
-        android:layout_marginRight="10pt"
-        android:layout_marginTop="5pt"
-        android:layout_marginBottom="10pt"
-        android:textSize="12pt"
-        android:background="@android:color/holo_blue_light"
-        android:id="@+id/button2" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:minWidth="25pt"
+        android:minHeight="25pt">
+        <TextView
+            android:text="Registrar"
+            android:textSize="24pt"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_light"
+            android:gravity="center"
+            android:layout_marginBottom="10pt"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="30pt"
+            android:id="@+id/textView1"
+            android:capitalize="characters"
+            android:textAllCaps="true" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="10pt"
+            android:layout_marginBottom="5pt"
+            android:gravity="center_vertical"
+            android:paddingLeft="5pt"
+            android:hint="Nome"
+            android:textSize="12pt"
+            android:background="#FFF"
+            android:id="@+id/editText1" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical"
+            android:paddingLeft="5pt"
+            android:hint="E-mail"
+            android:textSize="12pt"
+            android:background="#FFF"
+            android:id="@+id/editText2" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical"
+            android:paddingLeft="5pt"
+            android:hint="Senha"
+            android:textSize="12pt"
+            android:background="#FFF"
+            android:id="@+id/editText3" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="25pt"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="10pt"
+            android:gravity="center_vertical"
+            android:paddingLeft="5pt"
+            android:hint="Confirmar Senha"
+            android:textSize="12pt"
+            android:background="#FFF"
+            android:id="@+id/editText4" />
+        <Button
+            android:text="Salvar"
+            android:layout_height="25pt"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="10pt"
+            android:layout_marginBottom="5pt"
+            android:textSize="12pt"
+            android:background="#66CDAA"
+            android:id="@+id/button1" />
+        <Button
+            android:text="Voltar"
+            android:layout_height="25pt"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10pt"
+            android:layout_marginRight="10pt"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="10pt"
+            android:textSize="12pt"
+            android:background="@android:color/holo_blue_light"
+            android:id="@+id/btnBackToLogin" />
+    </LinearLayout>
+</ScrollView>
