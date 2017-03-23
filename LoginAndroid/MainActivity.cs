@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using System;
 using System.Linq;
+using LoginAndroid.Builders;
 using LoginAndroid.Models;
 using LoginAndroid.Repositories;
 
@@ -30,20 +31,7 @@ namespace LoginAndroid
             var usuario = FindViewById<EditText>(Resource.Id.etUsuario).Text;
             var senha = FindViewById<EditText>(Resource.Id.etSenha).Text;
 
-            if (UsuarioValido(usuario, senha))
-            {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Sucesso");
-                var dialog = alert.Create();
-                dialog.Show();
-            }
-            else
-            {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Erro");
-                var dialog = alert.Create();
-                dialog.Show();
-            }
+            AlertBuilder.Build(this, UsuarioValido(usuario, senha) ? "Sucesso" : "Erro");
         }
 
         private void btnRegistrar_Click(object sender, EventArgs ea)

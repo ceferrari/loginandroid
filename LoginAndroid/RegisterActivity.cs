@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using LoginAndroid.Builders;
 using LoginAndroid.Models;
 using LoginAndroid.Repositories;
 
@@ -37,12 +38,7 @@ namespace LoginAndroid
 
             if (PodeCadastrar(user, confirmarSenha))
             {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Sucesso");
-                alert.SetMessage("Usuário cadastrado com sucesso!");
-                alert.SetPositiveButton("OK", (senderAlert, args) => { });
-                Dialog dialog = alert.Create();
-                dialog.Show();
+                AlertBuilder.Build(this, "Sucesso", "Usuário cadastrado com sucesso!");
 
                 UserRepository.Users.Add(user);
             }
@@ -52,43 +48,27 @@ namespace LoginAndroid
         {
             if (user.Nome.Length <= 3)
             {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Alerta");
-                alert.SetMessage("O nome deve ter pelo menos 3 caracteres.");
-                alert.SetPositiveButton("OK", (senderAlert, args) => { });
-                Dialog dialog = alert.Create();
-                dialog.Show();
+                AlertBuilder.Build(this, "Alerta", "O nome deve ter pelo menos 3 caracteres.");
+
                 return false;
             }
             if (!user.Email.Contains("@"))
             {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Alerta");
-                alert.SetMessage("Informe um email válido.");
-                alert.SetPositiveButton("OK", (senderAlert, args) => { });
-                Dialog dialog = alert.Create();
-                dialog.Show();
+                AlertBuilder.Build(this, "Alerta", "Informe um email válido.");
+
                 return false;
 
             }
             if (user.Senha.Length <= 3)
             {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Alerta");
-                alert.SetMessage("Informe uma senha válida.");
-                alert.SetPositiveButton("OK", (senderAlert, args) => { });
-                Dialog dialog = alert.Create();
-                dialog.Show();
+                AlertBuilder.Build(this, "Alerta", "Informe uma senha válida.");
+
                 return false;
             }
             if (!user.Senha.Equals(confirmarSenha))
             {
-                var alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Alerta");
-                alert.SetMessage("Senha não coincidem.");
-                alert.SetPositiveButton("OK", (senderAlert, args) => { });
-                Dialog dialog = alert.Create();
-                dialog.Show();
+                AlertBuilder.Build(this, "Alerta", "Senhas não coincidem.");
+
                 return false;
             }
 
