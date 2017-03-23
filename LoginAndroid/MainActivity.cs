@@ -3,6 +3,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using System;
+using System.Linq;
+using LoginAndroid.Models;
 using LoginAndroid.Repositories;
 
 namespace LoginAndroid
@@ -14,47 +16,44 @@ namespace LoginAndroid
         {
             base.OnCreate(bundle);
 
-            SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.Main);
 
-            var button2 = FindViewById<Button>(Resource.Id.button2);
-            button2.Click += button2_Click;
+            var btnRegistrar = FindViewById<Button>(Resource.Id.btnRegistrar);
+            btnRegistrar.Click += btnRegistrar_Click;
 
-            var button1 = FindViewById<Button>(Resource.Id.button1);
-            button1.Click += button1_Click;
+            var btnEntrar = FindViewById<Button>(Resource.Id.btnEntrar);
+            btnEntrar.Click += btnEntrar_Click;
         }
-
-        private void button2_Click(object sender, EventArgs ea)
-        {
-            StartActivity(typeof(RegisterActivity));
-        }
-
-        private void button1_Click(object sender, EventArgs ea)
+        
+        private void btnEntrar_Click(object sender, EventArgs ea)
         {
             var usuario = FindViewById<EditText>(Resource.Id.etUsuario).Text;
             var senha = FindViewById<EditText>(Resource.Id.etSenha).Text;
 
-            if (UsuarioValido())
+            if (UsuarioValido(usuario, senha))
             {
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                var alert = new AlertDialog.Builder(this);
                 alert.SetTitle("Sucesso");
-                Dialog dialog = alert.Create();
+                var dialog = alert.Create();
                 dialog.Show();
             }
             else
             {
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                var alert = new AlertDialog.Builder(this);
                 alert.SetTitle("Erro");
-                Dialog dialog = alert.Create();
+                var dialog = alert.Create();
                 dialog.Show();
             }
-
-
         }
 
-        private bool UsuarioValido()
+        private void btnRegistrar_Click(object sender, EventArgs ea)
         {
-            
-            return true;
+            StartActivity(typeof(RegisterActivity));
+        }
+
+        private bool UsuarioValido(string usuario, string senha)
+        {
+            return UserRepository.Users.Any(x => x.Email.Equals(usuario) && x.Senha.Equals(senha));
         }
     }
 }

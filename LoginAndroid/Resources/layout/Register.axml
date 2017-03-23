@@ -32,7 +32,7 @@
             android:paddingLeft="5pt"
             android:hint="Nome"
             android:textSize="12pt"
-            android:background="#FFF"
+            android:textColor="#000000"
             android:id="@+id/etNome" />
         <EditText
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:paddingLeft="5pt"
             android:hint="E-mail"
             android:textSize="12pt"
-            android:background="#FFF"
+            android:textColor="#000000"
             android:id="@+id/etEmail" />
         <EditText
             android:layout_width="match_parent"
@@ -52,7 +52,8 @@
             android:paddingLeft="5pt"
             android:hint="Senha"
             android:textSize="12pt"
-            android:background="#FFF"
+            android:textColor="#000000"
+            android:inputType="textPassword" 
             android:id="@+id/etSenha" />
         <EditText
             android:layout_width="match_parent"
@@ -62,16 +63,14 @@
             android:paddingLeft="5pt"
             android:hint="Confirmar Senha"
             android:textSize="12pt"
-            android:background="#FFF"
+            android:textColor="#000000"
+            android:inputType="textPassword" 
             android:id="@+id/etConfirmarSenha" />
         <Button
             android:text="Salvar"
             android:layout_height="25pt"
             android:layout_width="match_parent"
-            android:layout_marginLeft="10pt"
-            android:layout_marginRight="10pt"
-            android:layout_marginTop="10pt"
-            android:layout_marginBottom="5pt"
+            android:layout_margin="10pt"
             android:textSize="12pt"
             android:background="#66CDAA"
             android:id="@+id/btnSalvar" />

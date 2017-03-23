@@ -50,27 +50,28 @@
         android:layout_width="match_parent"
         android:paddingLeft="5pt"
         android:textSize="12pt"
+        android:inputType="textPassword" 
         android:id="@+id/etSenha" />
     <Button
-        android:background="#66CDAA"
+        android:background="@android:color/holo_blue_light"
         android:layout_height="25pt"
         android:layout_marginBottom="5pt"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
         android:layout_marginTop="10pt"
         android:layout_width="match_parent"
-        android:text="Registrar"
+        android:text="Entrar"
         android:textSize="12pt"
-        android:id="@+id/button2" />
+        android:id="@+id/btnEntrar" />
     <Button
-        android:background="@android:color/holo_blue_light"
+        android:background="#66CDAA"
         android:layout_height="25pt"
         android:layout_marginBottom="10pt"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
         android:layout_marginTop="5pt"
         android:layout_width="match_parent"
-        android:text="Entrar"
+        android:text="Registrar"
         android:textSize="12pt"
-        android:id="@+id/button1" />
+        android:id="@+id/btnRegistrar" />
 </LinearLayout>
