@@ -42,6 +42,7 @@ namespace LoginAndroid
 
                 UserRepository.Users.Add(user);
             }
+
         }
 
         private bool PodeCadastrar(User user, string confirmarSenha)

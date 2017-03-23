@@ -7,6 +7,8 @@ using System.Linq;
 using LoginAndroid.Builders;
 using LoginAndroid.Models;
 using LoginAndroid.Repositories;
+using System.Linq;
+using LoginAndroid.Models;
 
 namespace LoginAndroid
 {
@@ -28,10 +30,29 @@ namespace LoginAndroid
         
         private void btnEntrar_Click(object sender, EventArgs ea)
         {
-            var usuario = FindViewById<EditText>(Resource.Id.etUsuario).Text;
+            var email = FindViewById<EditText>(Resource.Id.etEmail).Text;
             var senha = FindViewById<EditText>(Resource.Id.etSenha).Text;
 
+<<<<<<< HEAD
             AlertBuilder.Build(this, UsuarioValido(usuario, senha) ? "Sucesso" : "Erro");
+=======
+            if (UsuarioValido(email, senha))
+            {
+                var alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Sucesso");
+                var dialog = alert.Create();
+                dialog.Show();
+            }
+            else
+            {
+                var alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Erro");
+                alert.SetMessage("E-mail e/ou Senha inválidos");
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+>>>>>>> 16810fc6599119af4fd54508ec79e4df1e33efb4
         }
 
         private void btnRegistrar_Click(object sender, EventArgs ea)
@@ -39,9 +60,9 @@ namespace LoginAndroid
             StartActivity(typeof(RegisterActivity));
         }
 
-        private bool UsuarioValido(string usuario, string senha)
+        private bool UsuarioValido(string email, string senha)
         {
-            return UserRepository.Users.Any(x => x.Email.Equals(usuario) && x.Senha.Equals(senha));
+            return UserRepository.Users.Any(x => x.Email.Equals(email) && x.Senha.Equals(senha));
         }
     }
 }
