@@ -28,7 +28,7 @@
     <EditText
         android:background="#FFF"
         android:gravity="center_vertical"
-        android:hint="Usuário..."
+        android:hint="Email"
         android:layout_height="25pt"
         android:layout_marginBottom="5pt"
         android:layout_marginLeft="10pt"
@@ -37,11 +37,11 @@
         android:layout_width="match_parent"
         android:paddingLeft="5pt"
         android:textSize="12pt"
-        android:id="@+id/etUsuario" />
+        android:id="@+id/etEmail" />
     <EditText
         android:background="#FFF"
         android:gravity="center_vertical"
-        android:hint="Senha..."
+        android:hint="Senha"
         android:layout_height="25pt"
         android:layout_marginBottom="10pt"
         android:layout_marginLeft="10pt"
@@ -58,7 +58,7 @@
         android:layout_marginBottom="5pt"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
-        android:layout_marginTop="10pt"
+        android:layout_marginTop="5pt"
         android:layout_width="match_parent"
         android:text="Entrar"
         android:textSize="12pt"
@@ -66,7 +66,7 @@
     <Button
         android:background="#66CDAA"
         android:layout_height="25pt"
-        android:layout_marginBottom="10pt"
+        android:layout_marginBottom="5pt"
         android:layout_marginLeft="10pt"
         android:layout_marginRight="10pt"
         android:layout_marginTop="5pt"

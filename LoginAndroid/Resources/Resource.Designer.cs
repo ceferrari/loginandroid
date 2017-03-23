@@ -66,23 +66,20 @@ namespace LoginAndroid
 			// aapt resource value: 0x7f050005
 			public const int btnRegistrar = 2131034117;
 			
-			// aapt resource value: 0x7f05000a
-			public const int btnSalvar = 2131034122;
-			
 			// aapt resource value: 0x7f050009
-			public const int etConfirmarSenha = 2131034121;
+			public const int btnSalvar = 2131034121;
 			
 			// aapt resource value: 0x7f050008
-			public const int etEmail = 2131034120;
+			public const int etConfirmarSenha = 2131034120;
+			
+			// aapt resource value: 0x7f050002
+			public const int etEmail = 2131034114;
 			
 			// aapt resource value: 0x7f050007
 			public const int etNome = 2131034119;
 			
 			// aapt resource value: 0x7f050003
 			public const int etSenha = 2131034115;
-			
-			// aapt resource value: 0x7f050002
-			public const int etUsuario = 2131034114;
 			
 			// aapt resource value: 0x7f050000
 			public const int imageView1 = 2131034112;
