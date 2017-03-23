@@ -32,19 +32,73 @@ namespace LoginAndroid
             var email = FindViewById<EditText>(Resource.Id.etEmail).Text;
             var senha = FindViewById<EditText>(Resource.Id.etSenha).Text;
             var confirmarSenha = FindViewById<EditText>(Resource.Id.etConfirmarSenha).Text;
-            
-            if (nome.Length <= 3)
+
+            var user = new User(nome, email, senha);
+
+            if(PodeCadastrar(user, confirmarSenha))
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Sucesso");
+                alert.SetMessage("Usuário cadastrado com sucesso!");
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+
+                UserRepository.Users.Add(user);
+            }
+
+            foreach (var u in UserRepository.Users)
+            {
+                Console.WriteLine(u.Nome);
+            }
+
+        }
+
+        private bool PodeCadastrar(User user, string confirmarSenha)
+        {
+            if (user.Nome.Length <= 3)
             {
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
                 alert.SetTitle("Alerta");
                 alert.SetMessage("O nome deve ter pelo menos 3 caracteres.");
-                alert.SetPositiveButton("OK", (senderAlert, args) => {});
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
                 Dialog dialog = alert.Create();
                 dialog.Show();
+                return false;
+            }
+            else if (!user.Email.Contains("@"))
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Alerta");
+                alert.SetMessage("Informe um email válido.");
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+                return false;
+
+            }
+            else if (user.Senha.Length <= 3)
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Alerta");
+                alert.SetMessage("Informe uma senha válida.");
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+                return false;
+            }
+            else if (!user.Senha.Equals(confirmarSenha))
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Alerta");
+                alert.SetMessage("Senha não coincidem.");
+                alert.SetPositiveButton("OK", (senderAlert, args) => { });
+                Dialog dialog = alert.Create();
+                dialog.Show();
+                return false;
             }
 
-            var user = new User(nome, email, senha);
-            UserRepository.Users.Add(user);
+            return true;
         }
     }
 }

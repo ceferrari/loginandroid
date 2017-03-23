@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:paddingLeft="5pt"
         android:textSize="12pt"
-        android:id="@+id/textView2" />
+        android:id="@+id/etUsuario" />
     <EditText
         android:background="#FFF"
         android:gravity="center_vertical"
@@ -50,7 +50,7 @@
         android:layout_width="match_parent"
         android:paddingLeft="5pt"
         android:textSize="12pt"
-        android:id="@+id/textView3" />
+        android:id="@+id/etSenha" />
     <Button
         android:background="#66CDAA"
         android:layout_height="25pt"

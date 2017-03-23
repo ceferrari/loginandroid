@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using System;
+using LoginAndroid.Repositories;
 
 namespace LoginAndroid
 {
@@ -17,24 +18,43 @@ namespace LoginAndroid
 
             var button2 = FindViewById<Button>(Resource.Id.button2);
             button2.Click += button2_Click;
+
+            var button1 = FindViewById<Button>(Resource.Id.button1);
+            button1.Click += button1_Click;
         }
 
         private void button2_Click(object sender, EventArgs ea)
         {
-            //AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            //alert.SetTitle("Confirm delete");
-            //alert.SetMessage("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
-            //alert.SetPositiveButton("Delete", (senderAlert, args) => {
-            //    Toast.MakeText(this, "Deleted!", ToastLength.Short).Show();
-            //});
-
-            //alert.SetNegativeButton("Cancel", (senderAlert, args) => {
-            //    Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
-            //});
-
-            //Dialog dialog = alert.Create();
-            //dialog.Show();
             StartActivity(typeof(RegisterActivity));
+        }
+
+        private void button1_Click(object sender, EventArgs ea)
+        {
+            var usuario = FindViewById<EditText>(Resource.Id.etUsuario).Text;
+            var senha = FindViewById<EditText>(Resource.Id.etSenha).Text;
+
+            if (UsuarioValido())
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Sucesso");
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+            else
+            {
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Erro");
+                Dialog dialog = alert.Create();
+                dialog.Show();
+            }
+
+
+        }
+
+        private bool UsuarioValido()
+        {
+            
+            return true;
         }
     }
 }
