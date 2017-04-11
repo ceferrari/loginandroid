@@ -18,12 +18,11 @@ namespace LoginAndroid
     {
         EditText email, password;
         Button signIn;
-        private static String userSessionPref = "userPref";
-        private static String User_Email = "userEmail";
-        private static String User_Password = "user_Password";
-        private ISharedPreferences session;
-        private string _sessionEmail;
-        private string _sessionPass;
+        public static String userSessionPref = "userPref";
+        public static String User_Email = "userEmail";
+        public static String User_Password = "user_Password";
+        public ISharedPreferences session;
+        public string _sessionEmail, _sessionPass;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,7 +42,7 @@ namespace LoginAndroid
 
         public void Initialize()
         {
-            this.email = (EditText)FindViewById(Resource.Id.etEmail);
+            email = (EditText)FindViewById(Resource.Id.etEmail);
             password = (EditText)FindViewById(Resource.Id.etSenha);
             signIn = (Button)FindViewById(Resource.Id.btnEntrar);
             signIn.SetOnClickListener(this);
@@ -61,8 +60,16 @@ namespace LoginAndroid
                     session_editor.PutString("pass", _sessionPass);
                     session_editor.Commit();
                     Intent n = new Intent(this, typeof(HomeActivity));
-                    StartActivity(n);
-                    Finish();
+                    if (UsuarioValido(_sessionEmail, _sessionPass))
+                    {
+                        StartActivity(n);
+                        Finish();
+                    }
+                    else
+                    {
+                        AlertBuilder.Build(this, "Login e/ou Senha inválidos.");
+                    }
+                    
                     break;
             }
         }
@@ -87,19 +94,19 @@ namespace LoginAndroid
             StartActivity(typeof(RegisterActivity));
         }
 
-        //private bool UsuarioValido(string email, string senha)
-        //{
-        //    return UserRepository.Users.Any(x => x.Email.Equals(email) && x.Senha.Equals(senha));
-        //}
+        private bool UsuarioValido(string email, string senha)
+        {
+            return UserRepository.Users.Any(x => x.Email.Equals(email) && x.Senha.Equals(senha));
+        }
 
         public void checkCredentials()
         {
             ISharedPreferences preferences = GetSharedPreferences(userSessionPref, FileCreationMode.Private);
             String email = preferences.GetString("email", "");
-            Toast.MakeText(this, email, ToastLength.Short).Show();
             String pass = preferences.GetString("pass", "");
             if (!email.Equals("") && !pass.Equals(""))
             {
+                Toast.MakeText(this, "bem-vindo de volta, " + email, ToastLength.Short).Show();
                 Intent n = new Intent(this, typeof(HomeActivity));
                 StartActivity(n);
                 Finish();

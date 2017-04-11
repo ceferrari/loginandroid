@@ -15,11 +15,26 @@ namespace LoginAndroid
     [Activity(Label = "Home")]
     public class HomeActivity : Activity
     {
+        Button signOut;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Home);
+            signOut = (Button)FindViewById(Resource.Id.btnLogout);
+            signOut.Click += SignOut_Click;
+        }
+
+        void SignOut_Click(object sender, EventArgs e)
+        {
+            ISharedPreferences session = GetSharedPreferences(MainActivity.userSessionPref, FileCreationMode.Private);
+            ISharedPreferencesEditor editor = session.Edit();
+            editor.Clear();
+            editor.Commit();
+            Intent m = new Intent(this, typeof(MainActivity));
+            StartActivity(m);
+            Finish();
         }
     }
 }
