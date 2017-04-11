@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:paddingLeft="5pt"
         android:textSize="12pt"
-        android:inputType="textPassword" 
+        android:inputType="textPassword"
         android:id="@+id/etSenha" />
     <Button
         android:background="@android:color/holo_blue_light"
