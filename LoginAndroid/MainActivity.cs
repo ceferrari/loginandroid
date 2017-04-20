@@ -13,7 +13,7 @@ using LoginAndroid.Models;
 
 namespace LoginAndroid
 {
-    [Activity(Label = "Main", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Main", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
     public class MainActivity : Activity, View.IOnClickListener
     {
         EditText email, password;
@@ -96,7 +96,7 @@ namespace LoginAndroid
 
         private bool UsuarioValido(string email, string senha)
         {
-            return UserRepository.Users.Any(x => x.Email.Equals(email) && x.Senha.Equals(senha));
+            return UserRepository.Db.Table<User>().FirstOrDefault(x => x.Email.Equals(email) && x.Senha.Equals(senha)) != null;
         }
 
         public void checkCredentials()

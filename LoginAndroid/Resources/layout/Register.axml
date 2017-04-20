@@ -34,7 +34,8 @@
             android:hint="Nome"
             android:textSize="12pt"
             android:textColor="#000000"
-            android:id="@+id/etNome" />
+            android:id="@+id/etNome"
+            android:textColorHint="#aaa" />
         <EditText
             android:background="#FFF"
             android:layout_width="match_parent"
@@ -45,7 +46,8 @@
             android:hint="E-mail"
             android:textSize="12pt"
             android:textColor="#000000"
-            android:id="@+id/etEmail" />
+            android:id="@+id/etEmail"
+            android:textColorHint="#aaa" />
         <EditText
             android:background="#FFF"
             android:layout_width="match_parent"
@@ -57,7 +59,8 @@
             android:textSize="12pt"
             android:textColor="#000000"
             android:inputType="textPassword"
-            android:id="@+id/etSenha" />
+            android:id="@+id/etSenha"
+            android:textColorHint="#aaa" />
         <EditText
             android:background="#FFF"
             android:layout_width="match_parent"
@@ -69,7 +72,8 @@
             android:textSize="12pt"
             android:textColor="#000000"
             android:inputType="textPassword"
-            android:id="@+id/etConfirmarSenha" />
+            android:id="@+id/etConfirmarSenha"
+            android:textColorHint="#aaa" />
         <Button
             android:text="Salvar"
             android:layout_height="25pt"

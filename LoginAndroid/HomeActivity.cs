@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace LoginAndroid
 {
-    [Activity(Label = "Home")]
+    [Activity(Label = "Home", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
     public class HomeActivity : Activity
     {
         Button signOut;

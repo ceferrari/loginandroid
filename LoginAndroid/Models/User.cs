@@ -18,6 +18,11 @@ namespace LoginAndroid.Models
         public string Email { get; set; }
         public string Senha { get; set; }
 
+        public User()
+        {
+            
+        }
+
         public User(string nome, string email, string senha)
         {
             Nome = nome;

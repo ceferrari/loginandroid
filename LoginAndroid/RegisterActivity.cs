@@ -14,7 +14,7 @@ using LoginAndroid.Repositories;
 
 namespace LoginAndroid
 {
-    [Activity(Label = "Register", MainLauncher = false, Icon = "@drawable/icon")]
+    [Activity(Label = "Register", MainLauncher = false, Icon = "@drawable/icon", Theme = "@android:style/Theme.DeviceDefault.NoActionBar")]
     public class RegisterActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -40,7 +40,7 @@ namespace LoginAndroid
             {
                 AlertBuilder.Build(this, "Sucesso", "Usuário cadastrado com sucesso!");
 
-                UserRepository.Users.Add(user);
+                UserRepository.Db.Insert(user);
             }
 
         }
